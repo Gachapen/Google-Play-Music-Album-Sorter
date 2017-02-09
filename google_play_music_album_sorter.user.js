@@ -85,19 +85,15 @@ var domModifiedCallback = function() {
       return sortOrder === 'asc' ? aYear - bYear : bYear - aYear;
     });
 
-    laneContent.children("[data-type='album']").fadeOut("fast").promise().done(function() {
-      laneContent.empty();
+    laneContent.empty();
 
-      for (var i = 0; albums.length > 0; i++) {
-          var album = albums.get(0);
-          albums.splice(0, 1);
-          laneContent.append(album);
-      }
+    for (var i = 0; albums.length > 0; i++) {
+        var album = albums.get(0);
+        albums.splice(0, 1);
+        laneContent.append(album);
+    }
 
-      laneContent.children("[data-type='album']").fadeIn("fast");
-
-      sortingInProgress = false;
-    });
+    sortingInProgress = false;
   }
 };
 
@@ -133,10 +129,8 @@ GooglePlayMusicAlbumSorter.prototype.init = function() {
     if (sortingInProgress) {
       return;
     }
-    domModifiedTimeout = setTimeout(function() {
-      domModifiedCallback();
-    }, 500);
 
+    domModifiedCallback();
   });
 };
 
