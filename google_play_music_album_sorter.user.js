@@ -54,7 +54,7 @@ var domModifiedCallback = function() {
   if (sectionHeader) {
     sortingInProgress = true;
 
-    var sortOrder = sorter.loadOrder() || 'asc';
+    var sortOrder = sorter.loadOrder() || 'desc';
     if (DEBUG) console.log('sortOrder=', sortOrder);
 
     // if (DEBUG) console.log('$(#gpmas_sorter)=', $('#gpmas_sorter').html());
